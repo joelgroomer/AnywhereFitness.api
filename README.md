@@ -21,7 +21,9 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **lastName** | `String` | Last name. |
 | **email** | `String` | Email address. |
 | **type** | `String` | Either `client` or `instructor`. |
-| **punchCards** | [`UUID`] | An array of punchcard IDs for cards held by the user |
+| **registrations** | [`UUID`] | An array of classes the user has registered for. |
+| **punchCards** | [`UUID`] | An array of punchcard IDs for cards held by the user. |
+| **metro** | `String` | The metro area the user lives in for location filtering default. |
 
 ### Endpoints
 | Method | Endpoint | Description |
@@ -50,6 +52,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **price** | `Double` | The price of the class. |
 | **maxRegistrants** | `Int` or `null` | The maximum number of people who can register. |
 | **registrants** | [`UUID`] | Array of users who are registered to take the class. |
+| **offerPunchcard** | `Bool` | If `true`, allows clients who do not already have a card started for this instructor and category to create a new one. If `false`, a new card can't be created, but **this should not affect clients who already have punchcards** from getting a punch for this class. |
 
 ### Endpoints
 | Method | Endpoint | Description |
