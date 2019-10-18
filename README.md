@@ -20,9 +20,9 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **firstName** | `String` | First name. |
 | **lastName** | `String` | Last name. |
 | **email** | `String` | Email address. |
-| **type** | `String` | Either `client` or `instructor`. |
+| **userType** | `String` | Either `client` or `instructor`. |
 | **registrations** | [`UUID` as String] | An array of classes the user has registered for. |
-| **punchCards** | [`UUID` as String] | An array of punchcard IDs for cards held by the user. |
+| **punchcards** | [`UUID` as String] | An array of punchcard IDs for cards held by the user. |
 | **metro** | `String` | The metro area the user lives in for location filtering default. |
 
 ### Endpoints
@@ -103,3 +103,16 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **PUT** | /punchards/`:punchcardID`.json | Updates an existing punchcard. |
 
 *Sample JSON not ready yet*
+
+# How it works
+
+Instructors can create classes and modify details of their classes.
+- At the time of class creation, instructors can choose if they want to offer a punchcard.
+  - This should default to `false`
+  - Punchcards are probably a stretch goal. The implementation might be a little weird to meet the requirements we were given, so let's not worry about it unless we have time. **Just set this to false for now.**
+- **Stretch:** We should notify registrants via push or email when a class is cancelled.
+Both Clients and Instructors can register for classes (no need to check userType).
+- When a user registers for a class
+  - Add the classID to the user's `registrations` array.
+  - Add the userID to the class' `registrants` array.
+- When cancelling a registration, remove both of the above.

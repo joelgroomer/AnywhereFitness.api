@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "classes": {
+      "$class": {
+        ".read": true,
+        ".write": "data.child('instructor').val() === auth.uid",
+      	".validate": "newData.child('startTime').val() > now"
+      }
+    }
+  }
+}
