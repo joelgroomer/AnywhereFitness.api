@@ -21,8 +21,8 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **lastName** | `String` | Last name. |
 | **email** | `String` | Email address. |
 | **type** | `String` | Either `client` or `instructor`. |
-| **registrations** | [`UUID`] | An array of classes the user has registered for. |
-| **punchCards** | [`UUID`] | An array of punchcard IDs for cards held by the user. |
+| **registrations** | [`UUID` as String] | An array of classes the user has registered for. |
+| **punchCards** | [`UUID` as String] | An array of punchcard IDs for cards held by the user. |
 | **metro** | `String` | The metro area the user lives in for location filtering default. |
 
 ### Endpoints
@@ -36,8 +36,8 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| **classID** | `UUID` | An ID number for the class. |
-| **instructor** | `UUID` | The UID of the instructor leading the class. |
+| **classID** | `UUID` as String | An ID number for the class. |
+| **instructor** | `UUID` as String | The UID of the instructor leading the class. |
 | **startTime** | `timestamp` | The time the class starts. |
 | **duration** | `Int` | The length of the class in minutes. |
 | **title** | `String` | A title for the class. |
@@ -51,7 +51,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **zip** | `String` | Zip code. |
 | **price** | `Double` | The price of the class. |
 | **maxRegistrants** | `Int` or `null` | The maximum number of people who can register. |
-| **registrants** | [`UUID`] | Array of users who are registered to take the class. |
+| **registrants** | [`UUID` as String] | Array of users who are registered to take the class. |
 | **offerPunchcard** | `Bool` | If `true`, allows clients who do not already have a card started for this instructor and category to create a new one. If `false`, a new card can't be created, but **this should not affect clients who already have punchcards** from getting a punch for this class. |
 
 ### Endpoints
@@ -69,7 +69,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| **uuid** | `UUID` | An ID number for the category. |
+| **uuid** | `UUID` as String | An ID number for the category. |
 | **name** | `String` | The name of the category. |
 | **desc** | `String` or `null` | A description of the category. |
 
@@ -88,9 +88,9 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| **uuid** | `UUID` | An ID number for the punchcard. |
-| **instructor** | `UUID` | The ID number for the instructor the card applies to. |
-| **category** | `UUID` | The ID number for the class category the card applies to. |
+| **uuid** | `UUID` as String | An ID number for the punchcard. |
+| **instructor** | `UUID` as String | The ID number for the instructor the card applies to. |
+| **category** | `UUID` as String | The ID number for the class category the card applies to. |
 | **spots** | `Int` | The total number of spots that need to be punched. *We should have a max value* |
 | **punched** | `Int` | The number of spots that have been punched. |
 | **redeemed** | `Bool` | Whether or not the reward has been redeemed. |
