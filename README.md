@@ -28,7 +28,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 ### Endpoints
 | Method | Endpoint | Description |
 | ------ | -------- | ----------- |
-| **POST** | /users/`uid`.json | Create a new user. Use the UID supplied by firebase auth. |
+| **PUT** | /users/`uid`.json | Create a new user or update existing user. Use the UID supplied by firebase auth. If updating, send the entire object. |
 
 *Sample JSON not ready yet*
 
@@ -42,7 +42,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **duration** | `Int` | The length of the class in minutes. |
 | **title** | `String` | A title for the class. |
 | **category** | `String` | A string representing the type of the class, enumerated in `categories`. |
-| **intensity** | `String` | `Light`, `Medium`, or `Intense` -- *or other terms?* |
+| **intensity** | `String` | `light`, `medium`, or `intense` -- *or other terms?* |
 | **metro** | `String` | The metro area the class is in, to help with searching for local classes. |
 | **addr1** | `String` | Address line 1. |
 | **addr2** | `String` | Address line 2. |
@@ -59,8 +59,8 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | ------ | -------- | ----------- |
 | **GET** | /classes | Returns a list of all future classes. |
 | **GET** | /classes/`:classID`.json | Returns a particular class. |
-| **POST** | /classes | Create a class. |
-| **PUT** | /classes/`:classID`.json | Update an existing class. Can only be updated by an instructor with a UID matching the one in the `instructor` field of the class. |
+| **PUT** | /classes | Create a class. |
+| **PUT** | /classes/`:classID`.json | Create or update a class. Should only be updated by an instructor with a UID matching the one in the `instructor` field of the class. When creating a new class, generate a UUID first. Send entire object when updating. |
 | **DELETE** | /classes/`:classID`.json | Delete a class. |
 
 *Sample JSON not ready yet*
@@ -78,8 +78,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | ------ | -------- | ----------- |
 | **GET** | /categories | Returns a list of categories. |
 | **GET** | /categories/`:categoryID`.json | Returns a particular category. |
-| **POST** | /categories | Create a category. |
-| **PUT** | /categories/`:categoryID`.json | Update an existing category. |
+| **PUT** | /categories/`:categoryID`.json | Create or update a category. When creating, generate a UUID first. When updating, send entire object. |
 | **DELETE** | /categories/`:categoryID`.json | Delete a category. |
 
 *Sample JSON not ready yet*
@@ -99,8 +98,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | Method | Endpoint | Description |
 | ------ | -------- | ----------- |
 | **GET** | /punchards/`:punchcardID`.json | Returns a punchcard. |
-| **POST** | /punchcards | Creates a punchcard. |
-| **PUT** | /punchards/`:punchcardID`.json | Updates an existing punchcard. |
+| **PUT** | /punchards/`:punchcardID`.json | Create or update a punchcard. Send entire object. |
 
 *Sample JSON not ready yet*
 
