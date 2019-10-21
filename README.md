@@ -30,7 +30,9 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | ------ | -------- | ----------- |
 | **PUT** | /users/`uid`.json | Create a new user or update existing user. Use the UID supplied by firebase auth. If updating, send the entire object. |
 
-*Sample JSON not ready yet*
+### Sample JSON
+[All Users](/JSON/allUsers.json): /users.json
+[A Single User](/JSON/singleUser.json): /users/00f8c84a-8e99-4732-b11c-a0d3cfc8b10d.json
 
 ## Classes
 
@@ -63,7 +65,9 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **PUT** | /classes/`:classID`.json | Create or update a class. Should only be updated by an instructor with a UID matching the one in the `instructor` field of the class. When creating a new class, generate a UUID first. Send entire object when updating. |
 | **DELETE** | /classes/`:classID`.json | Delete a class. |
 
-*Sample JSON not ready yet*
+### Sample JSON
+[All Classes](/JSON/allClasses.json): /classes.json
+[A Single Class](/JSON/singleClass.json): /classes/ffeb3806-91af-4e63-9baa-531d2b318267.json 
 
 ## Categories
 
@@ -81,7 +85,9 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 | **PUT** | /categories/`:categoryID`.json | Create or update a category. When creating, generate a UUID first. When updating, send entire object. |
 | **DELETE** | /categories/`:categoryID`.json | Delete a category. |
 
-*Sample JSON not ready yet*
+### Sample JSON
+[All Categories](/JSON/allCategories.json): /categories.json
+[A Single Category](/JSON/singleCategory.json): /categories/9b4fa838-d7f6-40d3-bb23-75b5b8db668e.json
 
 ## Punchcards
 
