@@ -6,6 +6,7 @@ Base URL: https://lambda-anywhere-fitness.firebaseio.com/
 We'll use Firebase Authentication to let the user sign in. Only implement the "Password Authentication" for now, as it looks the simplest. We may add others as a stretch goal. [Read the docs here](https://firebase.google.com/docs/auth/?authuser=0)
 
 Web: https://firebase.google.com/docs/auth/web/password-auth?authuser=0
+
 iOS: https://firebase.google.com/docs/auth/ios/password-auth?authuser=0
 
 # Data Structure
@@ -32,6 +33,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 
 ### Sample JSON
 [All Users](/JSON/allUsers.json): /users.json
+
 [A Single User](/JSON/singleUser.json): /users/00f8c84a-8e99-4732-b11c-a0d3cfc8b10d.json
 
 ## Classes
@@ -67,6 +69,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 
 ### Sample JSON
 [All Classes](/JSON/allClasses.json): /classes.json
+
 [A Single Class](/JSON/singleClass.json): /classes/ffeb3806-91af-4e63-9baa-531d2b318267.json 
 
 ## Categories
@@ -87,6 +90,7 @@ Full descriptions of the data model is below. Sample JSON files are included in 
 
 ### Sample JSON
 [All Categories](/JSON/allCategories.json): /categories.json
+
 [A Single Category](/JSON/singleCategory.json): /categories/9b4fa838-d7f6-40d3-bb23-75b5b8db668e.json
 
 ## Punchcards
